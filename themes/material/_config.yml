@@ -33,7 +33,7 @@ scheme: Paradox
 
 # UI & UX: slogan, color, effect
 uiux:
-    slogan: "Hi, nice to meet you"
+    slogan: "Hi, my name is Daniel Chen."
     theme_color: "#0097A7"
     theme_sub_color: "#00838F"
     hyperlink_color: "#00838F"
@@ -49,7 +49,7 @@ js_effect:
 
 # Reading experience
 reading:
-    entry_excerpt: 80
+    entry_excerpt: 200
 
 # Thumbnail Settings
 thumbnail:
