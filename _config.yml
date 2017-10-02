@@ -7,7 +7,7 @@ title: Daniel Chen's blog
 subtitle:
 description:
 author: Daniel Chen
-language:
+language: en
 timezone:
 
 # URL
@@ -80,3 +80,5 @@ deploy:
   type: git
   repository: git@github.com:team6612/team6612.github.io.git
   branch: master
+
+  
