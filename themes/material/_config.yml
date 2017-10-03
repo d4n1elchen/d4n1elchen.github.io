@@ -204,6 +204,14 @@ sidebar:
             link: "/about"
             icon: person
             divider: false
+        Tags:
+            link: "/tags"
+            icon: bookmark
+            divider: false
+        Timeline:
+            link: "/timeline"
+            icon: timeline
+            divider: false
     article_num:
         use: false
         divider: false
