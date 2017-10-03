@@ -86,3 +86,5 @@ deploy:
   repository: git@github.com:team6612/team6612.github.io.git
   branch: master
 
+plugins:
+  hexo-generator-cname

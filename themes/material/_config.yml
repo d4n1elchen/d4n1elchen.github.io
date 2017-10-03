@@ -4,9 +4,9 @@
 
 # Head info
 head:
-    favicon: "/img/favicon.png"
-    high_res_favicon: "/img/favicon.png"
-    apple_touch_icon: "/img/favicon.png"
+    favicon: "/images/DC.png"
+    high_res_favicon: "/images/DC.png"
+    apple_touch_icon: "/images/DC.png"
     keywords:
     site_verification:
         google:
@@ -70,7 +70,7 @@ background:
 
 # Images Settings
 img:
-    logo: "/img/logo.png"
+    logo: "/images/DC.png"
     avatar: "/images/pikachu-sunglass.png"
     daily_pic: "/img/daily_pic.png"
     sidebar_header: "/img/sidebar_header.png"
@@ -204,6 +204,14 @@ sidebar:
             link: "/about"
             icon: person
             divider: false
+        Tags:
+            link: "/tags"
+            icon: bookmark
+            divider: false
+        Timeline:
+            link: "/timeline"
+            icon: timeline
+            divider: false
     article_num:
         use: false
         divider: false
@@ -249,7 +257,7 @@ search:
 # Available value:
 #     baidu | google | cnzz
 analytics:
-    google_site_id:
+    google_site_id: UA-107437294-1
     baidu_site_id:
     cnzz_site_id:
 
