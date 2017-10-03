@@ -4,9 +4,9 @@
 
 # Head info
 head:
-    favicon: "/img/favicon.png"
-    high_res_favicon: "/img/favicon.png"
-    apple_touch_icon: "/img/favicon.png"
+    favicon: "/images/DC.png"
+    high_res_favicon: "/images/DC.png"
+    apple_touch_icon: "/images/DC.png"
     keywords:
     site_verification:
         google:
@@ -70,7 +70,7 @@ background:
 
 # Images Settings
 img:
-    logo: "/img/logo.png"
+    logo: "/images/DC.png"
     avatar: "/images/pikachu-sunglass.png"
     daily_pic: "/img/daily_pic.png"
     sidebar_header: "/img/sidebar_header.png"
