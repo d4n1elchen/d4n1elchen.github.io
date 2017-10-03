@@ -16,7 +16,7 @@ thumbnail: https://storage.googleapis.com/material-design/publish/material_v_12/
 
 這是[Material Design](https://material.io/)官方網站上對Material Design的描述，MD在2014年的Google I/O首度被發表，自此成為Google至今的「設計語言」。
 
-{% iframe http://www.youtube.com/embed/Q8TXgCzxEnw auto 300 %}
+{% iframe https://www.youtube.com/embed/Q8TXgCzxEnw auto 300 %}
 
 會寫這篇文是因為自己嘗試設計了網站的LOGO，因為從以前就聽說有這樣的東西，也很喜歡這樣的風格，之前有一陣子寫前端都用[Materialize](http://materializecss.com/)這套CSS框架，但其實一直不太了解MD是什麼。
 
@@ -36,7 +36,7 @@ MD的理念源自於近年開始流行的Flat Design以及最早用在Google Now
 
 在色彩部份MD也定義了一套色彩標準，每個標準色都有14種深淺，並建議以中間色(500)做為主色，我的LOGO選用的是Blue Grey。
 
-{% iframe http://www.youtube.com/embed/xYkz0Ueg0L4 auto 300 %}
+{% iframe https://www.youtube.com/embed/xYkz0Ueg0L4 auto 300 %}
 
 其他還有很多不同的設計元素，有靜態的，也有動態的，像是物體該如何變形、移動，移動的速度變化、方向等等，一些UI設計經常會碰到的情境都有被定義。
 
