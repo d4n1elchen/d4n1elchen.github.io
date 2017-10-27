@@ -88,3 +88,4 @@ deploy:
 
 plugins:
   hexo-generator-cname
+  hexo-renderer-mathjax
