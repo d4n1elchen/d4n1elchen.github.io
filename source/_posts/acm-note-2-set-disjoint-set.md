@@ -1,10 +1,8 @@
 ---
 title: ACM note (2) - set & disjoint set
-tags:
-  - ACM
+tags: [ACM]
 id: 1049
-categories:
-  - Algorithm
+categories: Algorithm
 date: 2017-02-18 14:05:59
 ---
 

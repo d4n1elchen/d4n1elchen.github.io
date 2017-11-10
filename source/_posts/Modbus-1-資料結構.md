@@ -1,13 +1,8 @@
 ---
 title: Modbus (1) 資料結構
-tags:
-  - IoT
-  - modbus
-  - Machine Tools
-  - python
+tags: [IoT,modbus,Machine Tools,python]
 id: 483
-categories:
-  - IoT
+categories: IoT
 date: 2016-09-16 20:12:28
 ---
 

@@ -1,13 +1,8 @@
 ---
 title: Google Extension
-tags:
-  - Web
-  - NCKU Course Query
-  - Frontend
-  - NCKU
+tags: [Web,NCKU Course Query,Frontend,NCKU]
 id: 278
-categories:
-  - Web
+categories: Web
 date: 2016-09-10 13:56:43
 ---
 

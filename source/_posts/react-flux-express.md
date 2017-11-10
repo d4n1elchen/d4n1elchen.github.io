@@ -1,19 +1,8 @@
 ---
 title: React + Flux + Express
-tags:
-  - Web
-  - Express
-  - Course
-  - Flux
-  - Node
-  - React
-  - Frontend
-  - Backend
-  - NCKU
-  - NCKU Course Query
+tags: [Web,Express,Course,Flux,Node,React,Frontend,NCKU,NCKU Course Query]
 id: 305
-categories:
-  - Web
+categories: Web
 date: 2016-09-13 01:07:42
 ---
 

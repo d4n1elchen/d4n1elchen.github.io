@@ -1,10 +1,8 @@
 ---
 title: ACM note (3) - string 建構子
-tags:
-  - ACM
+tags: [ACM]
 id: 1099
-categories:
-  - Algorithm
+categories: Algorithm
 date: 2017-02-18 14:21:47
 ---
 

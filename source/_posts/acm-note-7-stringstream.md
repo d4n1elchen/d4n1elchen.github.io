@@ -1,10 +1,8 @@
 ---
 title: ACM note (7) - stringstream
-tags:
-  - ACM
+tags: [ACM]
 id: 1137
-categories:
-  - Algorithm
+categories: Algorithm
 date: 2017-02-18 15:59:25
 ---
 

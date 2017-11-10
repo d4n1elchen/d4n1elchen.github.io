@@ -1,10 +1,8 @@
 ---
 title: ACM note (6) - string 比較
-tags:
-  - ACM
+tags: [ACM]
 id: 1128
-categories:
-  - Algorithm
+categories: Algorithm
 date: 2017-02-18 15:45:21
 ---
 

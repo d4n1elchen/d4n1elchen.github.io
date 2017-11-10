@@ -1,10 +1,8 @@
 ---
 title: ACM note (1) queue & priority queue
-tags:
-  - ACM
+tags: [ACM]
 id: 1022
-categories:
-  - Algorithm
+categories: Algorithm
 date: 2017-02-18 13:21:12
 ---
 

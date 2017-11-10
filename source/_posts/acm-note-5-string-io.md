@@ -1,10 +1,8 @@
 ---
 title: ACM note (5) - string I/O
-tags:
-  - ACM
+tags: [ACM]
 id: 1125
-categories:
-  - Algorithm
+categories: Algorithm
 date: 2017-02-18 15:44:42
 ---
 
