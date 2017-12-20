@@ -1,7 +1,7 @@
 ---
 title: PID Controller的discrete form
 date: 2017-11-10 00:08:18
-tags: [PID,Control System,descrete,robotics]
+tags: [PID,Control System,discrete,robotics]
 categories: Control System
 ---
 
