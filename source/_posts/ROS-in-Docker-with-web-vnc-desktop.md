@@ -1,11 +1,8 @@
 ---
 title: ROS in Docker with web vnc desktop
 date: 2017-12-19 20:59:02
-tags:
-- Robotics
-- Docker
-categories:
-- Robotics
+tags: [Robotics, Docker]
+categories: Robotics
 ---
 
 Recently I'm trying to learn ROS. But unfortunately ROS haven't yet support Ubuntu 17.10. So I can only run ROS in docker container.
