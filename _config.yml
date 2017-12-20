@@ -88,4 +88,11 @@ deploy:
 
 plugins:
   hexo-generator-cname
+  hexo-generator-feed
   hexo-renderer-mathjax
+
+feed:
+  type: atom
+  path: atom.xml
+  limit: 20
+  content_limit: 140
