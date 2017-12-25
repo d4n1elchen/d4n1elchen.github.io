@@ -6,9 +6,9 @@ date: 2017-10-02 19:43:29
 [Resume](https://danielchen.tk/CV.pdf)
 [Github](https://github.com/team6612)
 
-¶Ù¡A§Ú¬ODaniel Chen¡A¦¨¤j¾÷±ñ¨t²¦·~¡A¥Ø«e¥ôÂ¾©ó¦¨¤j»s³y©ÒE¤Æ»s³y¤¤¤ß¡A¿³½ì¬O­µ¹C¡Bµ{¦¡¡A°¸º¸·|¬İ¤@¨Ç°Êµe¡Bº©µe¡A¬O­ÓªÎ¦v¡A¥Ø«e¥¿¦b­pµe¥Ó½Ğ¬ü°êªº¾÷¾¹¤H¬ã¨s©Ò¡C
+å—¨ï¼Œæˆ‘æ˜¯Daniel Chenï¼Œæˆå¤§æ©Ÿæ¢°ç³»ç•¢æ¥­ï¼Œç›®å‰ä»»è·æ–¼æˆå¤§è£½é€ æ‰€EåŒ–è£½é€ ä¸­å¿ƒï¼Œèˆˆè¶£æ˜¯éŸ³éŠã€ç¨‹å¼ï¼Œå¶çˆ¾æœƒçœ‹ä¸€äº›å‹•ç•«ã€æ¼«ç•«ï¼Œæ˜¯å€‹è‚¥å®…ï¼Œç›®å‰æ­£åœ¨è¨ˆç•«ç”³è«‹ç¾åœ‹çš„æ©Ÿå™¨äººç ”ç©¶æ‰€ã€‚
 
-§Ú¦³¿³½ìªº¬ã¨s»â°ì¦³¡A¾÷¾¹¤H¡B¦Û°Ê±±¨î¡B´O¤J¦¡¨t²Î¡Bºtºâªk¡B­pºâ²z½×¡Bºô­¶§Ş³N¡Bª«Ápºô¡B°Ï¶ôÁå¡B²Î­p¤ÀªR¡B¾÷¾¹¾Ç²ß¡B¼Æ¾Ç¡A¥Ø«emÁÙ¦b¾Ç²ß·í¤¤¡A³o­Ó³¡¸¨®æ·|¬ö¿ı¤@¨Ç¾Ç²ßµ§°O©M¤ß±o¡A­Y¬O°¾¦¨ªGµoªí©Î¬O±Ğ¾Çµ§°OÃşªº·|¼g­^¤å¡A¤ß±o¤À¨É¤Î¤ß±¡«h·|¥Î¤¤¤å¼¶¼g¡AÅwªï¤j®a¯d¨¥°Q½×¡C
+æˆ‘æœ‰èˆˆè¶£çš„ç ”ç©¶é ˜åŸŸæœ‰ï¼Œæ©Ÿå™¨äººã€è‡ªå‹•æ§åˆ¶ã€åµŒå…¥å¼ç³»çµ±ã€æ¼”ç®—æ³•ã€è¨ˆç®—ç†è«–ã€ç¶²é æŠ€è¡“ã€ç‰©è¯ç¶²ã€å€å¡ŠéŠã€çµ±è¨ˆåˆ†æã€æ©Ÿå™¨å­¸ç¿’ã€æ•¸å­¸ï¼Œç›®å‰éƒ½é‚„åœ¨å­¸ç¿’ç•¶ä¸­ï¼Œé€™å€‹éƒ¨è½æ ¼æœƒç´€éŒ„ä¸€äº›å­¸ç¿’ç­†è¨˜å’Œå¿ƒå¾—ï¼Œè‹¥æ˜¯åæˆæœç™¼è¡¨æˆ–æ˜¯æ•™å­¸ç­†è¨˜é¡çš„æœƒå¯«è‹±æ–‡ï¼Œå¿ƒå¾—åˆ†äº«åŠå¿ƒæƒ…å‰‡æœƒç”¨ä¸­æ–‡æ’°å¯«ï¼Œæ­¡è¿å¤§å®¶ç•™è¨€è¨è«–ã€‚
 
 Hi, my name is Daniel Chen. I graduated from Dept. of Mechanical Engineering, National Cheng-Kung University (NCKU), Taiwan. I'm currently working in e-Manufacturing Research Center, NCKU. I'm interested in rhythm games and programming and I will watch Japanese anime and conmic in my free time. I plan to apply Master program in Robotics in US now.
 
