@@ -76,4 +76,4 @@ ref.orderByChild("location_time").startAt("裝置位置_" + timestamp_start).end
 
 但這實在不太直觀而且若有更多欄位要查詢會變得很難處理。
 
-不過Firebase最近有推出一個新的資料儲存服務[Cloud Firestore](https://firebase.google.com/docs/firestore/)，但仍在Beta release，接下來可能會先嘗試用Firestore，未來的話想把資料庫的部分抽象化，用XML等資料描述語言定義資料庫結構，再根據使用者需求依定義好的結構，在不同的資料庫上建立實例，以簡化資料庫設定的流程。
+不過Firebase最近有推出一個新的資料儲存服務[Cloud Firestore](https://firebase.google.com/docs/firestore/)，有提供類似SQL的where條件查詢，但仍在Beta release，接下來可能會先嘗試用Firestore，未來的話想把資料庫的部分抽象化，用XML等資料描述語言定義資料庫結構，再根據使用者需求依定義好的結構，在不同的資料庫上建立實例，以簡化資料庫設定的流程。
