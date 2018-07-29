@@ -131,7 +131,7 @@ $$
 輸出層採用的是 Euclidean Radial Basis Function，即計算與特定位置點的距離
 
 $$
-y_i = \sum_{j=0}^{83} (s_j-w_{ij})^2
+y_i = \sum_{j=0}^{83} (x_j-w_{ij})^2
 $$
 
 這邊 j 即為剛才全連接層的 index，而 $w_{ij}$ 為 RBF 的權重，這邊的權重非可訓練的參數，而是一組事先以人工挑選過固定的參數，以手寫數字辨識而言會有 10 組參數，因此可以計算出 10 組 RBF 值的輸出，挑選參數的方法有很多種，而 LeNet 的挑選的方法為將數字畫在一組 7x12 的 bitmap 上，展開後即為一組維度為 84 的向量，且這組向量的值為 [-1, 1]，與全連接的輸出值域相同，如此可避免 sigmoid 太容易達到飽和，飽和會讓模型收斂得更慢。(參考下圖)
@@ -145,7 +145,7 @@ $$
 Loss function 一般採用 Maximum Likelihood Estimation (MLE)，在本文中等同於 Minimum Mean Squared Error (MSE)，最簡單的方式如下
 
 $$
-E(W) = \frac{1}{P} \sum_{p=1}^P y_{D_p}(Z^p, W) = \frac{1}{P} \sum_{p=1}^P \sum_{j=0}^{83} (s_j-w_{{D_p}j})^2
+E(W) = \frac{1}{P} \sum_{p=1}^P y_{D_p}(Z^p, W) = \frac{1}{P} \sum_{p=1}^P \sum_{j=0}^{83} (x_j-w_{{D_p}j})^2
 $$
 
 其中 $D_p$ 為該樣本對應的正確類別，這個損失函數有一些不足之處
