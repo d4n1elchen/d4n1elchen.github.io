@@ -5,6 +5,10 @@ tags: [statistics,math,machine learning,data analysis,deep learning,neural netwo
 categories: Machine Learning
 ---
 
+[Hackmd](https://hackmd.io/s/rka5m35NX)，內容可能有修訂，以 Hackmd 上的版本為主。
+
+---
+
 Y. Lecun, L. Bottou, Y. Bengio and P. Haffner, "Gradient-based learning applied to document recognition," in Proceedings of the IEEE, vol. 86, no. 11, pp. 2278-2324, Nov 1998.
 doi: 10.1109/5.726791
 
@@ -35,6 +39,7 @@ I. Introduction
 作者提到雖然我們想加入更好的通用性，但對學習演算法而言，能夠整合先驗知識可以使得模型更容易訓練成功，而在多層神經網路中加入先驗知識的方法是根據你對問題的瞭解來調整網路結構，CNN 即是運用此觀念，給權重加入限制條件，讓神經網路能夠針對 2D 的影像資料觀測出局部的圖型特徵。
 
 ### A. Learning from data
+
 {% raw %}
 這一小節主要在簡述一個 General 的機器學習模型及參數估計的概念，機器學習為透過資料找尋一個函式對應關係
 
@@ -60,7 +65,9 @@ $$
 
 這節後半段也有提到有關模型複雜度與模型誤差之間的 trade-off 問題，但目前我還看不太懂他的表達方式。
 {% endraw %}
+
 ### B. Gradient-Based Learning
+
 {% raw %}
 這小節主要解釋梯度下降法的精神以及公式，若損失函數處處連續可微，我們可以透過梯度來估計改變某個參數對 $E_{train}$ 的影響程度，藉此來更新參數，最簡單的方式為梯度下降法
 
@@ -72,6 +79,7 @@ $$
 
 這節也提到了 Stochastic Gradient Descent，即 SGD 演算法，SGD 通常有較好的收斂性，有關 SGD 的詳細說明可參考 Appendix B。
 {% endraw %}
+
 ### C. Gradient Back-Propagation
 
 這節講到了 gradient descent 過去主要用在線性的模型中，但近年有一些發現使得梯度下降有更廣泛的運用
@@ -119,6 +127,7 @@ Convolution/sub-sampling 的架構是啟發於先前提到的生物學研究，�
 共享權重的設計大幅降低了網路的參數總量，使得網路有更好的收斂性，也降低對資料量的需求。
 
 ### B. LeNet-5
+
 {% raw %}
 這節詳細的解釋了 LeNet-5 的架構，可參考上面的架構圖，其中 CX 表示卷積層 SX 表示 Sub-sampling 層，卷積和 Sub-sampling 暫時就先不詳細解釋了，之後有空再補，但要注意的事情是 S2 到 C3 的連接方式和我們現在實作 CNN 的方式有點不太一樣，有興趣的人可以先讀論文，從第 7 頁右下方開始。
 
@@ -136,11 +145,13 @@ $$
 
 這邊 j 即為剛才全連接層的 index，而 $w_{ij}$ 為 RBF 的權重，這邊的權重非可訓練的參數，而是一組事先以人工挑選過固定的參數，以手寫數字辨識而言會有 10 組參數，因此可以計算出 10 組 RBF 值的輸出，挑選參數的方法有很多種，而 LeNet 的挑選的方法為將數字畫在一組 7x12 的 bitmap 上，展開後即為一組維度為 84 的向量，且這組向量的值為 [-1, 1]，與全連接的輸出值域相同，如此可避免 sigmoid 太容易達到飽和，飽和會讓模型收斂得更慢。(參考下圖)
 {% endraw %}
+
 ![](https://i.imgur.com/Vv2Xalc.png)
 
 論文中有提到他為什麼不用 one-hot 的原因是，當 class 數目增加時模型的表現會變差，但近年來的研究多是用 one-hot 來編碼，且有更好的表現，這部分值得深究看看原因為何。
 
 ### C. Loss Function
+
 {% raw %}
 Loss function 一般採用 Maximum Likelihood Estimation (MLE)，在本文中等同於 Minimum Mean Squared Error (MSE)，最簡單的方式如下
 
@@ -150,8 +161,10 @@ $$
 
 其中 $D_p$ 為該樣本對應的正確類別，這個損失函數有一些不足之處
 {% endraw %}
+
 1. 若我們使得 RBF 的權重可調整，則此損失函數可能會解出無用的解 (這部分我還沒看懂原因，等看懂在補上)
 2. 忽略了不同類別之間的關係比較
+
 {% raw %}
 為解決上述問題，加上懲罰項修正後的損失函數如下
 
