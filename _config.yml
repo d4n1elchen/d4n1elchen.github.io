@@ -12,7 +12,7 @@ timezone:
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://blog.danielchen.tk
+url: http://blog.danielchen.cc
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults: 
@@ -83,7 +83,7 @@ theme: material
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repository: git@github.com:team6612/team6612.github.io.git
+  repository: git@github.com:d4n1elchen/d4n1elchen.github.io.git
   branch: master
 
 plugins:

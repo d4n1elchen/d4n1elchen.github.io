@@ -88,7 +88,7 @@ img:
 #        - If you have setup your custom font-family, don't forget to add style tag with @font-face or link.tag with font css
 #          to /source/data/head.yml as custom code, to load custom font files.
 fonts:
-    family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "ÂæÆËΩØ???Èª?", Arial, sans-serif
+    family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "ÂæÆËΩØ???ÔøΩ?", Arial, sans-serif
     use: google
     custom_font_host:
 
@@ -103,7 +103,7 @@ copyright_since:
 # Footer Text
 # You can specify the text you want to show in footer, HTML tag is supported.
 #   For example, you can setup ICP license number as:
-#       '<a href="http://www.miitbeian.gov.cn" rel="nofollow">??êICPÂ§áxxxxxxxx?è∑-x</a>'
+#       '<a href="http://www.miitbeian.gov.cn" rel="nofollow">??ÔøΩICPÂ§áxxxxxxxx?ÔøΩÔøΩ-x</a>'
 footer_text:
 
 # Qrcode for redirect at other device
@@ -164,7 +164,7 @@ sns:
     weibo:
     instagram:
     tumblr:
-    github: "https://github.com/team6612"
+    github: "https://github.com/d4n1elchen"
     linkedin: "https://linkedin.com/in/d4n1el"
     zhihu:
     bilibili:
@@ -268,11 +268,11 @@ analytics:
 # Leancloud Views
 leancloud:
     enable: false
-    app_id: #‰Ω†Á?? app_id
-    app_key: #‰Ω†Á?? app_key
+    app_id: #‰Ω†ÔøΩ?? app_id
+    app_key: #‰Ω†ÔøΩ?? app_key
     av_core_mini: "https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"
 
-# Busuanzi ‰∏çË?úÂ?? Views
+# Busuanzi ‰∏çÔøΩ?ÔøΩÔøΩ?? Views
 busuanzi:
     enable: false
     all_site_uv: false
