@@ -50,10 +50,10 @@ GPU Cache 和 CPU 概念基本上一樣，只是 GPU 運算核心比 CPU 多上�
 
 ### 3.1 Data structures
 
-1. {% raw %}$y$ and $\delta$ are 2D strided with a pitch of 32 floats{% endraw %}
-2. {% raw %}Forward connection matrix: $C^n${% endraw %}
-3. {% raw %}Backward connection matrix: $C_{BP}${% endraw %}
-4. {% raw %}$WIDX_{BP}${% endraw %}
+1. $y$ and $\delta$ are 2D strided with a pitch of 32 floats
+2. Forward connection matrix: $C^n$
+3. Backward connection matrix: $C_{BP}$
+4. $WIDX_{BP}$
     - (還沒讀懂，應和 Chain rule 有關)
 
 2, 3 都是方便運算時可以快速知道連接關係用的。
@@ -74,9 +74,9 @@ GPU Cache 和 CPU 概念基本上一樣，只是 GPU 運算核心比 CPU 多上�
 因為當前層可能會影響前一層很多個神經元，如果用 Push 會造成很多次重複的記憶體存取，論文採用的是 Pull，論文中的數學式主要在計算會影響的前後層神經元之間 index 的關係，也就是在計算神經元的連接關係。
 
 ### 3.4 Adjusting weights
-{% raw %}
+
 1D grid 對應到層跟層之間的 filter，2D block 對應到每個 filter 的權重，但每個 filter 還需要額外多一次操作更新 bias，所以每個 block 一共有 $(K_x + 1) \times K_y$ 個 thread。通常多出來的那 $K_y$ 個 thread 會需要等待。
-{% endraw %}
+
 
 4 Experiments
 ---
