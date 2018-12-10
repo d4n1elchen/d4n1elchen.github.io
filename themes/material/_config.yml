@@ -301,7 +301,7 @@ vendors:
     # FontAwesome 4.5.0
     fontawesome:
     # MathJax 2.7.0-2.7.1
-    mathjax:
+    mathjax: https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js
     # Prettify r298 (only prettify.js)
     prettify:
     # Material Icons 3.0.1

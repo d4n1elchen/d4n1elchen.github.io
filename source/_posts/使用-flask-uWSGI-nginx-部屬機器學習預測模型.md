@@ -3,6 +3,7 @@ title: 使用 flask + uWSGI + nginx 部屬機器學習預測模型
 date: 2018-12-08 11:31:55
 tags: [Web, Machine Learning]
 categories: Web
+mathjax: true
 ---
 
 最近受朋友邀請參與創業團隊負責機器學習演算法模型部屬，這個團隊最早是從課堂專題的成員將專題內容帶出來創業的，因此過去 DEMO 的 Code 大部分都是在 Jupyter 上做出來的，我的工作就是將這些演算法服務化並部屬。
@@ -140,7 +141,7 @@ from flask import jsonify
 import algo # algo.py
 
 app = Flask(__name__)
-
+    
 @app.route('/pisqrt', methods=['GET'])
 def pisqrt():
     a = request.args.get('a')
@@ -176,7 +177,7 @@ $ python server.py
 
 最後是啟動服務，可直接執行 `python server.py` 來啟動，或是用 `systemd` 來設定開機自動啟動，以下是 `systemd` 的範例設定
 
-在 `/home/ubuntu/model-server/server.py` 中加入 shebang (#!)
+在 `/home/ubuntu/model-server/server.py` 中加入 shebang (第一行的 #!)
 ```python
 #!/usr/bin/env python
 
@@ -186,7 +187,7 @@ from flask import jsonify
 import algo # algo.py
 
 app = Flask(__name__)
-
+    
 @app.route('/pisqrt', methods=['GET'])
 def pisqrt():
     a = request.args.get('a')
@@ -197,12 +198,12 @@ def pisqrt():
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port=5000)
 ```
-給 `/home/ubuntu/model-server/server.py` 執行權限
+給 `/home/ubuntu/model-server/server.py` 加上執行權限
 ```shell
 $ chmod +x ~/model-server/server.py
 ```
 
-`/etc/systemd/system/modelserver.service`
+編輯 `/etc/systemd/system/modelserver.service` (記得裡面所有路徑都要是絕對路徑)
 ```
 [Unit]
 Description=Model Server
@@ -210,8 +211,8 @@ After=network.target
 
 [Service]
 User=ubuntu
-WorkingDirectory=/home/ubuntu/model-server/   # 使用絕對路徑
-ExecStart=/home/ubuntu/model-server/server.py # 使用絕對路徑
+WorkingDirectory=/home/ubuntu/model-server/
+ExecStart=/home/ubuntu/model-server/server.py
 Restart=on-failure
 RemainAfterExit=yes
 
@@ -241,9 +242,9 @@ uwsgi 是一套 Web Server (如 nginx) 與 Web Application (如 flask) 之間的
 
 1. uWSGI 是一套網頁伺服器軟體
 2. uWSGI 可以作為 middleware 把你的 service 包裝起來，讓 nginx 可以將請求轉發給你的 service，以 nginx 做為主要的 http server 提升安全性和效能
-3. uWSGI 可以讓你可以同時開多個 service 來處理多人同時請求的情境，他自動會幫你做 load balance
+3. uWSGI 可以讓你可以同時開多個 service 來處理多人同時請求的情境，他會自動幫你做 load balance
 
-其中 3 是我們想要的，因為可能會面臨同時大量的使用者要進行請求，如果沒有做 load balance，所有的請求全部都塞在同一個 Process 上的話，效能會相當低落，latency 也會提高。
+其中 3 是我們主要想要的，因為可能會面臨同時大量的使用者要進行請求，如果沒有做 load balance，所有的請求全部都塞在同一個 Process 上的話，效能會相當低落，latency 也會提高。
 
 ### uWSGI
 我們先將之前開起來的服務暫停
@@ -256,8 +257,7 @@ uwsgi 是一套 Web Server (如 nginx) 與 Web Application (如 flask) 之間的
 $ pip install uwsgi
 ```
 
-撰寫 wsgi 進入點
-`model-server/wsgi.py`
+撰寫 wsgi 進入點 `model-server/wsgi.py`
 ```python
 from server import app
 
@@ -286,9 +286,9 @@ $ uwsgi --ini uwsgi.ini
 ```
 以上操作和前面一行指令的結果應完全一樣。
 
-嘗試加入數個 worker 看看 (下面每次做 `uwsgi.ini` 都需要重開 uWSGI 才會生效，大家自己注意一下)
+嘗試加入數個 worker 看看 (下面每次做 `uwsgi.ini` 的修改都需要重開 uWSGI 才會生效，就不重複說明了，大家自己注意一下)
 
-`model-server/uwsgi.ini`
+編輯 `model-server/uwsgi.ini`
 ```ini
 [uwsgi]
 module = server:app
@@ -299,7 +299,7 @@ master = true
 processes = 5
 ```
 
-因為在 local 上跑的，除非去找壓力測試的軟體來玩，不然其實感受不出差意，不過應該可以看到提示現在有幾個 worker 正在運作，如果 flask 有寫 log 的話應該也會看到同時輸出 5 個 log。
+因為在 local 上跑，除非去找壓力測試的軟體來玩，不然其實感受不出差異，不過應該可以看到提示現在有幾個 worker 正在運作，如果 flask 有寫 log 的話應該也會看到同時輸出 5 個 log。
 
 ### nginx
 
@@ -312,7 +312,7 @@ nginx 是一套網頁伺服器，和 apache 一樣，但在效能和安全性上
 # apt-get install nginx
 ```
 
-因為接下來 uWSGI 接收的請求不會來自外部而是來自 nginx，我們不需要 uWSGI 自己做為 http server 了，改用欲設的 uwsgi，並使用 unix socket 來監聽請求，可提升速度及安全性。
+因為接下來 uWSGI 接收的請求不會來自外部而是來自 nginx，我們不需要 uWSGI 自己做為 http server 了，改用 uWSGI 預設的 uwsgi 介面，並使用 unix socket 來監聽請求，可提升速度及安全性。
 
 修改 `model-server/uwsgi.ini`
 ```ini
@@ -334,16 +334,16 @@ $ uwsgi --ini uwsgi.ini
 編輯檔案 `/etc/nginx/sites-available/modelserver` (注意檔案權限問題，nginx 的設定檔都需要 root 權限才能編輯)
 ```conf
 server {
-    listen 5555; # 你想監聽的 port
-    server_name your_domain www.your_domain; # 如果有指定網域需要設定上來，
-                                             # 沒有網域的話有沒設定沒什麼差別
+    listen 5555;
+    server_name your_domain www.your_domain;
 
     location / {
         include uwsgi_params;
-        uwsgi_pass unix:/home/ubuntu/model-server/model-server.sock; # 使用絕對路徑
+        uwsgi_pass unix:/home/ubuntu/model-server/model-server.sock;
     }
 }
 ```
+可依照需求修改 listening port 跟 server_name，unix socket 一樣需要指定絕對路徑
 
 啟用此 config 檔
 ```shell
@@ -374,8 +374,8 @@ After=network.target
 [Service]
 User=ubuntu
 Group=www-data
-WorkingDirectory=/home/ubuntu/model-server/   # 使用絕對路徑
-ExecStart=/path/to/bin/uwsgi --ini uwsgi.ini  # 使用絕對路徑
+WorkingDirectory=/home/ubuntu/model-server/
+ExecStart=/path/to/bin/uwsgi --ini uwsgi.ini
 Restart=on-failure
 RemainAfterExit=yes
 

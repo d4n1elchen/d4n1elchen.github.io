@@ -3,6 +3,7 @@ title: PID Controller的discrete form
 date: 2017-11-10 00:08:18
 tags: [PID,Control System,discrete,robotics]
 categories: Control System
+mathjax: true
 ---
 
 PID Controller在各系的自動控制課一定都會講到，我大學時是在大三的時候上到這門課，大致而言學校的自控課程都會先從laplace transform開始教，然後教一些分析系統穩定度的方法，然後會以一些基本的控制模型來講解，PID就是其中一個。

@@ -6,6 +6,7 @@ date: 2018-12-06 13:39:54
 tags: [statistics,math,machine learning,data analysis,deep learning,neural network]
 categories: Machine Learning
 thumbnail: https://i.imgur.com/IYz0baq.png
+mathjax: true
 ---
 
 Dan C. Cireşan et al., "Flexible, High Performance Convolutional Neural Networks for Image Classification," In Proc. International Joint Conference on Artificial Intelligence '02, 2011, pp. 1237-1242

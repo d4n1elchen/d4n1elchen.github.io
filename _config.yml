@@ -95,6 +95,3 @@ feed:
   path: atom.xml
   limit: 20
   content_limit: 140
-
-math:
-  engine: 'mathjax'

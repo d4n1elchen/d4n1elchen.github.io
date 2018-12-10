@@ -4,6 +4,7 @@ date: 2018-07-29 22:59:08
 tags: [statistics,math,machine learning,data analysis,deep learning,neural network]
 categories: Machine Learning
 thumbnail: https://i.imgur.com/5YcH2WU.png
+mathjax: true
 ---
 
 [Hackmd](https://hackmd.io/s/rka5m35NX)，內容可能有修訂，以 Hackmd 上的版本為主。
