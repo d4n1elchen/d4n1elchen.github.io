@@ -28,7 +28,7 @@ $$
 x_s(t) = x(t) \sum^\infty_{k=-\infty} \delta(t-kT_s)
 $$
 
-其中 $x$ 為原始訊號，$x_s$ 為取樣後的訊號，$\delta$ 為 impulse train function (上圖中間的函數)，即在取樣點有值，其餘為零的函數，$k$ 為第 $k$ 個取樣點。
+其中 $x$ 為原始訊號，$x_s$ 為取樣後的訊號，$\Sigma \delta$ 為 impulse train function (上圖中間的函數)，即在取樣點有值，其餘為零的函數，$k$ 為第 $k$ 個取樣點。
 
 因為除了取樣點以外都為零，非取樣點的訊號並不影響，且 Laplace 轉換只關心零點以後的訊號，我們可以將方程式改寫為
 
