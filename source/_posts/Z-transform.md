@@ -54,8 +54,10 @@ $$
 
 設 $z=e^{sT_s}, x[k]=x(kT_s)$，我們可以得到
 
+{% raw %}
 $$
 \mathcal{Z}\{x(t)\}=\mathcal{L}\{x_s(t)\}=\sum^\infty_{k=0} x[k] z^{-k}
 $$
+{% endraw %}
 
 即課本中常見的 Z-transform 公式，是不是很好理解呢？因此只需要記得 Z-transform 是訊號離散化的 Laplace transform 就行了。
