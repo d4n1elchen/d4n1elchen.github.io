@@ -8,6 +8,8 @@ categories: Web
 # 還債
 此為[前年的鐵人賽參賽作品](https://ithelp.ithome.com.tw/users/20103396/ironman/1030)，當時只寫了七天就不行了，最近又想重新學習 vue.js，因此將之前寫的東西搬運過來並從未完成的地方繼續，我仍主要會在鐵人賽那邊發表，但會同步在 Blog 這邊發布，只是不一定會每天寫就是了。
 
+[原文章](https://ithelp.ithome.com.tw/articles/10184750)
+
 # 前言
 大家好，我是DC，機械系學生自學網頁程式設計，過去前端和後端都接觸過，後端寫過Node.js、PHP、ROR、Django，前端只用過Bootstrap之類的css框架，之前嘗試過AngularJs跟React等JS框架，但都是修改網路上找到的教學中的範例，我今年第一次知道有鐵人賽，也是第一次參加，這次我想嘗試直接閱讀vuejs的document學習，並從零開始建構一個vuejs的專案。
 
