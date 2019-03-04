@@ -13,18 +13,20 @@ categories: Web
 
 # 30天規劃
 以下是[官方教學文件](https://vuejs.org/v2/guide/index.html)的目錄，前半個月將試著把教學讀完，後半個月會使用vue製作一個專案。
-> Installation
-> Introduction
-> What is Vue.js
-> The Vue Instance
-> Template Syntax
-> Computed Properties and Watchers
-> Class and Style Bindings
-> Conditional Rendering
-> List Rendering
-> Event Handling
-> Form Input Bindings
-> Components
+
+* Installation
+* Introduction
+* What is Vue.js
+* The Vue Instance
+* Template Syntax
+* Computed Properties and Watchers
+* Class and Style Bindings
+* Conditional Rendering
+* List Rendering
+* Event Handling
+* Form Input Bindings
+* Components
+
 所以前半月會是我讀文件的筆記，後半月是專案的工作進度報告。
 
 # What is Vue?
