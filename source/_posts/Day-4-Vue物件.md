@@ -76,7 +76,7 @@ vm.$watch('a', function (newVal, oldVal) {
 })
 ```
 
-*Vue在這節特別提到不要使用[arrow functions](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Functions/Arrow_functions)作為vue物件方法的傳入參數或callback，詳細原因可以參考[原文](https://vuejs.org/v2/guide/instance.html)
+> Vue在這節特別提到不要使用[arrow functions](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Functions/Arrow_functions)作為vue物件方法的傳入參數或callback，詳細原因可以參考[原文](https://vuejs.org/v2/guide/instance.html)
 
 # 生命週期
 下圖展示了一個vue物件的生命週期
