@@ -11,14 +11,14 @@ categories: Web
 
 # 元素屬性 v-bind
 除了將data載進內容之外，vue還可以將內容link到元素屬性中:
-```
+```html
 <div id="app-2">
   <span v-bind:title="message">
     Hover your mouse over me for a few seconds to see my dynamically bound title!
   </span>
 </div>
 ```
-```
+```javascript
 var app2 = new Vue({
   el: '#app-2',
   data: {
@@ -34,12 +34,12 @@ var app2 = new Vue({
 
 # 條件判斷 v-if
 這裡的條件判斷用來決定元素是否顯示
-```
+```html
 <div id="app-3">
   <p v-if="seen">Now you see me</p>
 </div>
 ```
-```
+```javascript
 var app3 = new Vue({
   el: '#app-3',
   data: {
@@ -53,7 +53,7 @@ var app3 = new Vue({
 
 # 迴圈 v-for
 vue可以利用迴圈根據內容產生重複的element
-```
+```html
 <div id="app-4">
   <ol>
     <li v-for="todo in todos">
@@ -62,7 +62,7 @@ vue可以利用迴圈根據內容產生重複的element
   </ol>
 </div>
 ```
-```
+```javascript
 var app4 = new Vue({
   el: '#app-4',
   data: {
@@ -84,7 +84,7 @@ var app4 = new Vue({
 js object結構類似於json，最外面以一組大括號`{}`包起來，各組資料間以逗點`,`分隔，資料是以key-value的格式儲存，差別在於json只能儲存字串資料跟另一組json結構，js object可以存任何js中的資料型態，包含數值、字串、函式、陣列，當然也可以存另一個js object。
 
 以下是一個簡單的範例
-```
+```javascript
 var obj = {
     key1: 10,         // 數值
     key2: "string1",  // 字串
@@ -96,13 +96,13 @@ var obj = {
 }
 ```
 若要存取裡面的內容可以用`.`來存取，如：
-```
+```javascript
 console.log(obj.key2); // string1
 ```
 會被稱作object是因為我們可將裡面的每一個元素視為這個object的屬性，屬性的名稱就是他的key的名子。
 
-初學者很容易將js array跟js object搞混（至少我搞混了好一段時間），因為js array跟js object都用逗點分隔，且array也不限儲存內容的資料型態，array中可以存ojbect，object中也可以存array，兩個混在一起寫更容易亂掉，在此做個小比較。
-```
+初學者很容易將js array跟js object搞混（至少我搞混了好一段時間），因為js array跟js object都用逗點分隔，且array也不限儲存內容的資料型態，array中可以存ojbect，object中也可以存array，兩個混在一起寫更容易亂掉，在此做個小比較。（補充：其實在 js 裡面 array 的型別也是 object，這邊指的是初始化的語法不同）
+```javascript
       | 宣告方式 |   儲存結構   | 範例
 ------+---------+------------+---------------------
 js obj| 大括號{} | key: value | { num1: 1, num2: 2 }
@@ -110,7 +110,7 @@ js obj| 大括號{} | key: value | { num1: 1, num2: 2 }
 js arr| 中括號[] |      value | [ 1, 2 ]
 ```
 再回來看剛剛的範例
-```
+```javascript
 var app4 = new Vue({           // 宣告一個vue物件並傳入一個js object
   el: '#app-4',                // 屬性el的值是個字串
   data: {                      // 屬性data的值是個object
@@ -123,7 +123,7 @@ var app4 = new Vue({           // 宣告一個vue物件並傳入一個js object
 })
 ```
 有了object跟array的概念後再回來看template
-```
+```html
 <div id="app-4">
   <ol>
     <li v-for="todo in todos">
@@ -137,7 +137,7 @@ var app4 = new Vue({           // 宣告一個vue物件並傳入一個js object
 所以要注意的地方是todos要是個array，且array中的每一個object都要有text這個屬性。
 
 當然array中不一定要是object，也可以放一般的資料型態，如下面這個範例
-```
+```html
 <div id="app-4">
   <ol>
     <li v-for="member in members">
@@ -146,7 +146,7 @@ var app4 = new Vue({           // 宣告一個vue物件並傳入一個js object
   </ol>
 </div>
 ```
-```
+```javascript
 var app4 = new Vue({
   el: '#app-4',
   data: {

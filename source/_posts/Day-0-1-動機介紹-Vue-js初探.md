@@ -39,20 +39,20 @@ Vue (發音 /vjuː/, like view) 是個發展中的前端框架。 和其他整�
 # Hello Vue
 Vue.js和其他js框架一樣，只要在頁面上load框架的主程式就可以使用。
 
-```
+```html
 <script src="https://unpkg.com/vue/dist/vue.js"></script>
 ```
 
 Vue.js的寫法和Angular.js很像，在html中直接宣告模板，然後用js填入內容
 以下是個簡單的[範例](https://jsfiddle.net/chrisvfritz/50wL7mdz/)
 
-```
+```html
 <div id="app">
   {{ message }}
 </div>
 ```
 
-```
+```javascript
 var app = new Vue({
   el: '#app',
   data: {
