@@ -159,6 +159,6 @@ var vm = new Vue({
 最後提一下，watch 的應用時機應是當我們想對資料的更新做出複雜的反應和操作時使用。
 
 # 總結
-今天介紹了 computed 以及 watch 屬性，並介紹了 computed 的 computed cache 特性以及 computed / method 的應用時機。
+今天介紹了 computed 以及 watch 屬性，並介紹了 computed 的 computed cache 特性以及 computed/method 的應用時機。
 
 下次將介紹 class 和 style 的綁定，為你的 DOM 加上生動的樣式吧！
