@@ -15,7 +15,7 @@ categories: Web
 </div>
 ```
 
-除了使用 `filter` 以外，vue 提供了兩個可以在顯示之前進行處理的方式 `computed property` 以及 `watch`。
+除了使用 `filter` 以外，vue 提供了兩個可以對資料進行處理的方式 `computed property` 以及 `watch`。
 
 # 計算屬性 (Computed property)
 當有對資料進行複雜的處理的需求時，我們可以在 vue 物件的 computed 屬性加入自定義的 computed property，並定義其對應的函式
@@ -42,7 +42,7 @@ var vm = new Vue({
 })
 ```
 
-在 computed property 中，this 對應到的是該 vue 物件，可以看到這個例子裏面 `reversedMessage` 相依於 `message` 屬性，當 `message` 更新時，`reversedMessage` 就會重新計算，並更新到 DOM 中。
+在 computed property 中，`this` 對應到的是該 vue 物件，可以看到這個例子裏面 `reversedMessage` 相依於 `message` 屬性，當 `message` 更新時，`reversedMessage` 就會重新計算，並更新到 DOM 中。
 
 可以嘗試在 console 中修改 `message` 看看
 ```javascript
@@ -52,7 +52,7 @@ console.log(vm.reversedMessage) // => 'eybdooG'
 ```
 
 # 計算快取 (Computed cache)
-也就是說 computed property 在其相依的資料更新時才會重新計算，否則用到該屬性的 DOM 只會顯示上一次計算好的內容，稱為 computed cache。
+從上述範例可以發現 computed property 會去監聽在其相依資料的更新，並在更新時重新計算，若資料沒有更新則該屬性的 DOM 會顯示上一次計算好的內容，稱為 computed cache。
 
 這邊就可以指出使用 computed property 和定義一個 method 並在模板中呼叫最主要的差異，那就是 method 在每次 re-render 時都會重新執行，先考慮以下用 method 實作的 `reverseMessage`
 
@@ -68,9 +68,11 @@ methods: {
 }
 ```
 
-從 render 出的結果來看與 computed property 一致，更新 `message` 也會同步更新 `reverseMessage`，因為我們更新了 `message`，這個操作會更新 computed cache。
+每次 rerender 時 `reverseMessage` 會重新計算結果，因此如果 `messag` 在過程中有變更，則 `reverseMesage` 的結果也會跟著改變。
 
-考慮以下範例
+而因為我們更新了 `message`，這個操作會更新 computed cache，因此如果用 computed property 的話，從 render 出的結果來看會與 computed property 一致。
+
+但如果我們考慮以下範例
 
 ```
 computed: {
@@ -80,7 +82,7 @@ computed: {
 }
 ```
 
-這個 computed property 所參考的是一個 Date 物件，當他被建立後就不會再更新了。如果我們用 method 來實作一樣的功能，則每次 render 該物件時都會重新執行一次，now 就會不斷被更新。
+這個 computed property 所參考的是一個 Date 物件，當他被建立後就不會再更新了。如果我們用 method 來實作一樣的功能，則每次 render 該物件時都會重新執行一次，now 就會不斷被更新，可是如果用 computed property 的話，因為這個物件不會被更新，所以 rerender 時會從 computed cache 拿上一次計算的結果，now 就不會被更新。
 
 使用 computed cache 的時機是，當有個需要消耗較多運算資源的資料（例如 AJAX）需要被顯示在很多地方時，若用 method 則每個地方該方法都會被重新運算，會造成相當大的資源消耗，此時有 computed cache 可以大幅增進效能。
 
@@ -152,8 +154,7 @@ var vm = new Vue({
 })
 ```
 
-
-最後官方給了一個複雜的 [watch 範例](https://vuejs.org/v2/guide/computed.html#Watchers)，大家可以自己研究一下，簡單來說我們可以用 watch 來偵測使用者輸入，詳細的資料流我覺得大家看著 code 自己在腦中跑過一次會對這兩個工具更加熟悉。
+最後官方給了一個複雜的 [watch 範例](https://vuejs.org/v2/guide/computed.html#Watchers)，大家可以自己研究一下，簡單來說我們可以用 watch 來偵測使用者輸入，詳細的資料流我覺得大家看著 code 自己在腦中跑過一次會對這兩個工具更加熟悉，不過看不懂沒關係，因為裡面牽扯到一個後面才會提到的用法 `v-model`。
 
 最後提一下，watch 的應用時機應是當我們想對資料的更新做出複雜的反應和操作時使用。
 
