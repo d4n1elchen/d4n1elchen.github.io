@@ -12,6 +12,8 @@ mathjax: true
 
 Cross-Entropy 在 ML 中評估分類模型的 Loss 用得相當多，在多數的 ML 教學中多略過 Cross-Entropy 的解釋，但其實如果了解 Entropy 的實際意義之後來看並不是那麼難理解。
 
+這篇文章將會討論 Entropy 及 Cross-Entropy，KL Divergence 留到下次。
+
 # Entropy
 
 Entropy 由資訊理論之父 Claude Shannon 發明，因此資訊熵又稱 Shannon's Information Entropy，資訊理論當時發展的背景是通訊技術發展初期，傳輸訊息的資源有限，人們在研究怎樣傳遞訊息是最有效率的，要提升資訊的傳輸效率，有兩個切入點，一是提升訊息傳遞技術本身的效率，如更快的傳輸設備，另一是提升單位資料傳輸可傳遞的資訊量，而後者就是資訊理論研究的對象。
