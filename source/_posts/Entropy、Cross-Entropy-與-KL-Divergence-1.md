@@ -91,7 +91,7 @@ $$
 有了這個我們可以根據上表中每個字母的發生機率計算要分辨該字母的發生最少需要的位元數，乘上機率後相加，便是最理想的編碼系統，平均最小所需的位元數，這就是 Entropy，公式如下
 
 $$
-Entropy = \mathbb{E}_{X}[-log P(X)] = -\sum_{x \in X} P(x) log P(x)
+Entropy = \mathbb{E}_{X}[-log P(X)] = -\sum_{x \sim X} P(x) log P(x)
 $$
 
 用一句話來說的話，資訊熵表示對於編碼一**已知機率分布**的隨機事件，所需的最少位元數。
@@ -174,7 +174,7 @@ $$
 我們可以計算 Q 的 Entropy
 
 $$
-Entropy(Q) = \mathbb{E}_{x\in Q}[-logQ(x)] = - \sum_{x\in Q} Q(x)logQ(x)
+Entropy(Q) = \mathbb{E}_{x\sim Q}[-logQ(x)] = - \sum_{x\sim Q} Q(x)logQ(x)
 $$
 
 是為編碼以 Q 為機率分布的隨機事件所需的最小位元數。
@@ -182,7 +182,7 @@ $$
 但當我們知道實際的機率分布為 P 之後，我們可以評估看看以 Q 所設計出的編碼系統在真實分布下的位元數期望值
 
 $$
-CrossEntropy(P,Q) = \mathbb{E}_{x\in P}[-logQ(x)] = - \sum_{x\in P} P(x)logQ(x)
+CrossEntropy(P,Q) = \mathbb{E}_{x\sim P}[-logQ(x)] = - \sum_{x\sim P} P(x)logQ(x)
 $$
 
 這就是交叉熵，用來評估以另一個機率分布設計編碼系統描述真實機率分布的能力，又記做 $H(P,Q)$。
@@ -203,7 +203,7 @@ $$
 
 $$
 \begin{align}
-H(P,Q) &= - \sum_{x\in P} P(x)logQ(x) \\
+H(P,Q) &= - \sum_{x\sim P} P(x)logQ(x) \\
 &= - (P(1)logQ(1) + P(0)logQ(0)) \\
 &= - (P(1)logQ(1) + (1-P(1))log(1-Q(1))) \\
 &= - (y\ log\ y' + (1-y)\ log\ (1-y'))
