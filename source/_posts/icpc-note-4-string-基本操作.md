@@ -1,6 +1,6 @@
 ---
-title: ACM note (4) - string 基本操作
-tags: [ACM]
+title: ICPC note (4) - string 基本操作
+tags: [ICPC, Algorithm, Programming Contest]
 id: 1122
 categories: Algorithm
 date: 2017-02-18 15:43:29

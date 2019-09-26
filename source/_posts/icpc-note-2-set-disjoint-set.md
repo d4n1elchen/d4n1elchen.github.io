@@ -1,6 +1,6 @@
 ---
-title: ACM note (2) - set & disjoint set
-tags: [ACM]
+title: ICPC note (2) - set & disjoint set
+tags: [ICPC, Algorithm, Programming Contest]
 id: 1049
 categories: Algorithm
 date: 2017-02-18 14:05:59

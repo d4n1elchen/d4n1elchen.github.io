@@ -1,6 +1,6 @@
 ---
-title: ACM note (3) - string 建構子
-tags: [ACM]
+title: ICPC note (3) - string 建構子
+tags: [ICPC, Algorithm, Programming Contest]
 id: 1099
 categories: Algorithm
 date: 2017-02-18 14:21:47

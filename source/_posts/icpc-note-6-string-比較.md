@@ -1,6 +1,6 @@
 ---
-title: ACM note (6) - string 比較
-tags: [ACM]
+title: ICPC note (6) - string 比較
+tags: [ICPC, Algorithm, Programming Contest]
 id: 1128
 categories: Algorithm
 date: 2017-02-18 15:45:21

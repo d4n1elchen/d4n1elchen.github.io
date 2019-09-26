@@ -1,6 +1,6 @@
 ---
-title: ACM note (7) - stringstream
-tags: [ACM]
+title: ICPC note (7) - stringstream
+tags: [ICPC, Algorithm, Programming Contest]
 id: 1137
 categories: Algorithm
 date: 2017-02-18 15:59:25

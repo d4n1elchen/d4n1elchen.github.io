@@ -1,6 +1,6 @@
 ---
-title: ACM note (5) - string I/O
-tags: [ACM]
+title: ICPC note (5) - string I/O
+tags: [ICPC, Algorithm, Programming Contest]
 id: 1125
 categories: Algorithm
 date: 2017-02-18 15:44:42
