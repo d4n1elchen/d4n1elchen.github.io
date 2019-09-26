@@ -38,7 +38,7 @@ Output: False
 
 ## Thought
 
-The strategy is the same as finding two elements that sum of them equals to k in a sorted array. But we cannot perform random access on a BST. The key point of this question is to either rebuild the sorted array by inorder traversal through BST.
+The strategy is the same as finding two elements in a sorted array that sum of them equals to k. But we cannot perform random access on a BST. The key point of this question is to either rebuild the sorted array by inorder traversal through BST or iteratively go through the BST also in inorder order.
 
 There's a clear and efficient solution posted in the discussion that he implemented a BST Iterator to simulate the two pointer sweeping in the sorted array version.
 
