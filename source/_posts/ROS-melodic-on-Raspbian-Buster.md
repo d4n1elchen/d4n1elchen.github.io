@@ -22,11 +22,11 @@ For Windows users, I would recommend using [Etcher](https://www.balena.io/etcher
 ### Headless installation
 (Ref [Setting up a Raspberry Pi headless](https://www.raspberrypi.org/documentation/configuration/wireless/headless.md))
 
-If you do not have a computer screen for the monitor of your pi, you need to setup the wifi beforhand. 
+If you do not have a computer screen for your Pi, you need to setup the wifi beforehand. 
 
-Firstly, plug your SD card reader with the SD card you just flashed back to your laptop.
+Firstly, plug back your SD card reader with the SD card you just flashed to your laptop.
 
-In Windows, you'll see a disk named "boot" in the navigator of File Explorer. (Be careful not to format the other one, otherwise you'll need to flash it again)
+In Windows, you'll see a disk named "boot" in the navigator of File Explorer. (You'll also see a popup window saying that you need to format a disk. Be careful NOT to format it, otherwise you'll need to flash again)
 
 {% asset_img boot.png %}
 
@@ -40,8 +40,8 @@ update_config=1
 country=US
 
 network={
- ssid="<Name of your WiFi>"
- psk="<Password for your WiFi>"
+ ssid="&ltName of your WiFi&gt"
+ psk="&ltPassword for your WiFi&gt"
 }
 ```
 
@@ -53,7 +53,7 @@ Eject the SD card from laptop and boot your Pi using modified SD card.
 
 If your setup is correct, you can find your Pi in the local network. (Using IP scanner or whatever you used to find your Pi usually)
 
-## Upgrade system and common software
+## Upgrade system and install common software
 
 Run following commands
 ```sh
@@ -66,13 +66,13 @@ Reboot your Pi after installation
 sudo reboot
 ```
 
-## Install ROS melodic (Build from scratch)
+## Install ROS melodic
 (Ref [Installing ROS Kinetic on the Raspberry Pi](http://wiki.ros.org/ROSberryPi/Installing%20ROS%20Kinetic%20on%20the%20Raspberry%20Pi), please note that the link is for ROS Kinetic)
 
 ### Setup ROS Repository
 
 ```sh
-sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
+sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" &gt /etc/apt/sources.list.d/ros-latest.list'
 sudo apt-key adv --keyserver hkp://ha.pool.sks-keyservers.net:80 --recv-key C1CF6E31E6BADE8868B172B4F42ED6FBAB17C654
 sudo apt-get update && sudo apt-get -y upgrade
 ```
@@ -100,7 +100,7 @@ cd ~/ros_catkin_ws
 
 #### Fetch source code by wstool
 ```sh
-rosinstall_generator ros_comm --rosdistro melodic --deps --wet-only --tar > melodic-ros_comm-wet.rosinstall
+rosinstall_generator ros_comm --rosdistro melodic --deps --wet-only --tar &gt melodic-ros_comm-wet.rosinstall
 wstool init src melodic-ros_comm-wet.rosinstall
 ```
 
@@ -169,17 +169,17 @@ The process to add new package is as follow
 You may see similar command above somewhere during the installation. This is to generate a list of package source link.
 ```sh
 cd ~/ros_catkin_ws
-rosinstall_generator <package names seperated by space> --rosdistro melodic --deps --wet-only --tar > <custom file name>.rosinstall
+rosinstall_generator &ltpackage names seperated by space&gt --rosdistro melodic --deps --wet-only --tar &gt &ltcustom file name&gt.rosinstall
 ```
 
-Example (to install `sensor_msgs`)
+Example (to install [sensor_msgs](http://wiki.ros.org/sensor_msgs))
 ```sh
-rosinstall_generator sensor_msgs --rosdistro melodic --deps --wet-only --tar > melodic-sensor_msgs.rosinstall
+rosinstall_generator sensor_msgs --rosdistro melodic --deps --wet-only --tar &gt melodic-sensor_msgs.rosinstall
 ```
 
 ### Merge and update the workspace
 ```sh
-wstool merge -t src <rosinstall file you just generated>.rosinstall
+wstool merge -t src &ltrosinstall file you just generated&gt.rosinstall
 wstool update -t src
 ```
 
@@ -204,4 +204,4 @@ sudo ./src/catkin/bin/catkin_make_isolated --install -DCMAKE_BUILD_TYPE=Release 
 ## Conclusion
 It's a bit tedious installing ROS and managing pakcage on RPi and the build time is long. So I wrote this post for memo and future reference.
 
-Next post I'll talk about how to create a publisher node on RPi and setup the multi-machine environment.
+Next post I'll talk about how to setup the multi-machine environment and then create a publisher node on RPi.
