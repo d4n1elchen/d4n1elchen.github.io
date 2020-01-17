@@ -112,3 +112,8 @@ pi@rpi:~ $ rostopic list
 It's not so complicated to setup multiple machine network. Just need to make sure the address you specified can be access by other machine on the same network.
 
 Next, I'll write a publisher node on RPi and a subscriber node on laptop to test our setup.
+
+## Link to other relavant post
+* {% post_link ROS-melodic-on-Raspbian-Buster %}
+* {% post_link Multiple-machine-setup-for-ROS-melodic %} (this post)
+* {% post_link Create-ROS-publisher-node-using-rospy-on-Raspberry-Pi %}

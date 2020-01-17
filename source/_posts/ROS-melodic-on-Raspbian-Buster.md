@@ -205,3 +205,8 @@ sudo ./src/catkin/bin/catkin_make_isolated --install -DCMAKE_BUILD_TYPE=Release 
 It's a bit tedious installing ROS and managing pakcage on RPi and the build time is long. So I wrote this post for memo and future reference.
 
 Next post I'll talk about how to setup the multi-machine environment and then create a publisher node on RPi.
+
+## Link to other relavant post
+* {% post_link ROS-melodic-on-Raspbian-Buster %} (this post)
+* {% post_link Multiple-machine-setup-for-ROS-melodic %}
+* {% post_link Create-ROS-publisher-node-using-rospy-on-Raspberry-Pi %}
