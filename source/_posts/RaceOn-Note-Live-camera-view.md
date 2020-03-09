@@ -18,6 +18,8 @@ Generally, ROS is nothing to do with "Operating System". It is just a message co
 
 This is a really simple conceptual communication model. It's similar to newspaper or magazine subscription. The subscribers can subscribe "topics" they're interested in. The publisher of a certain topic will publish messages to all subscribers that subscribe the topic. All the message passing goes through ethernet. So the publishing/subscribing can happen between nodes within the same machine, as well as transferring through nodes on different machines.
 
+### Master node
+
 To implement this protocol, ROS design a central node call "master node" that keeps all information about the topics, including the address of its publisher and subscriber. When a subscriber wants to subscribe a topic, it needs to register it through the master node, and then the master node will pass this information to publisher. When a publisher has something to submit, it will send the messages to the subscriber list provided by master node.
 
 ## Setup a ROS Melodic environment on your laptop
