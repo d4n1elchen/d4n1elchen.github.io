@@ -161,7 +161,7 @@ Entropy(\{P_1, P_2, P_3, P_4, ...\}) &= log N - \frac{1}{N}[(1 + N\epsilon_1)log
 \end{align}
 $$
 
-我們證明對於離散的隨機事件，完全隨機的 Entropy 會是最大的，此外當機率集中於某個事件時，考慮極端狀況 $\{P_k = 1, P_{n\neq k}=0\}$，Entropy 會等於零，也就是說事件越確定 Entropy 會越低，這性質亦可以推廣至連續的分佈。
+我們證明對於離散的隨機事件，完全隨機的 Entropy 會是最大的，此外當機率集中於某個事件時，考慮極端狀況 $\{P\_k = 1, P\_{n\neq k}=0\}$，Entropy 會等於零，也就是說事件越確定 Entropy 會越低，這性質亦可以推廣至連續的分佈。
 
 總之到目前為止我們總算清楚了 Entropy 的實際涵義以及其可測量亂度的特性。
 
@@ -195,7 +195,7 @@ $$
 
 在分類問題中最常被拿來當作 loss function 的就是 Cross-Entropy，但通常一般的 ML 教學都會略過 Cross Entropy 的解釋，不過理解了 Entropy 和 Cross Entropy 的概念之後其實不難理解為什麼可以用交叉熵來作為分類問題的 loss function。
 
-分類模型其實可以看成是去近似一個條件機率分布 Q，給定資料 X，每個 Class 發生的機率為何，即 $Q(Class_i|X)$，而每次訓練時，我們都有實際的 (GT) 和近似的 (Model) 機率分布，實際的分布以 One-hot encoding 表達，例如某個資料 $x$ 屬於 $Class_k$，其實際的條件機率分布為 $P(Class_{i\ne k}|x) = 0, P(Class_{k}|x) = 1$，而模型的輸出為 $Q(Class_i|x) = \{Q_1, Q_2, \dots, Q_n\}$
+分類模型其實可以看成是去近似一個條件機率分布 Q，給定資料 X，每個 Class 發生的機率為何，即 $Q(Class\_i|X)$，而每次訓練時，我們都有實際的 (GT) 和近似的 (Model) 機率分布，實際的分布以 One-hot encoding 表達，例如某個資料 $x$ 屬於 $Class\_k$，其實際的條件機率分布為 $P(Class\_{i\ne k}|x) = 0, P(Class\_{k}|x) = 1$，而模型的輸出為 $Q(Class_i|x) = \{Q\_1, Q\_2, \dots, Q\_n\}$
 
 透過計算 H(P,Q)，我們可以得到以 Q 來表達 P 的能力，當 Q 越接近 P 時 H(P,Q) 會越小，因此可以將其作為衡量 P、Q 兩分佈相似的程度。
 
@@ -215,11 +215,7 @@ $$
 以上，應該對 Entropy 和 Cross Entropy 有比較有條理的理解了，KL Divergence 留到下次再寫，KL Divergence 是 Generative model 中用非常多的一個指標，其概念也是從 Entropy 延伸出去的，欲了解 Generative model 必須先理解 KL Divergence，KL Divergence 和 Cross Entropy 類似，都可以評估兩個分佈的差異程度，但在一些特殊情況下 KL Divergence 可以更好的評估兩分佈實際上的差異。
 
 # References
-### Demystifying Entropy - Naoki Shibuya
-https://towardsdatascience.com/demystifying-entropy-f2c3221e2550
-### Demystifying Cross-Entropy - Naoki Shibuya
-https://towardsdatascience.com/demystifying-cross-entropy-e80e3ad54a8
-### Demystifying KL Divergence - Naoki Shibuya
-https://towardsdatascience.com/demystifying-kl-divergence-7ebe4317ee68
-### Why do we use Kullback-Leibler divergence rather than cross entropy in the t-SNE objective function?
-https://stats.stackexchange.com/questions/265966/why-do-we-use-kullback-leibler-divergence-rather-than-cross-entropy-in-the-t-sne/265989
+* [Demystifying Entropy - Naoki Shibuya](https://towardsdatascience.com/demystifying-entropy-f2c3221e2550)
+* [Demystifying Cross-Entropy - Naoki Shibuya](https://towardsdatascience.com/demystifying-cross-entropy-e80e3ad54a8)
+* [Demystifying KL Divergence - Naoki Shibuya](https://towardsdatascience.com/demystifying-kl-divergence-7ebe4317ee68)
+* [Why do we use Kullback-Leibler divergence rather than cross entropy in the t-SNE objective function?](https://stats.stackexchange.com/questions/265966/why-do-we-use-kullback-leibler-divergence-rather-than-cross-entropy-in-the-t-sne/265989)
