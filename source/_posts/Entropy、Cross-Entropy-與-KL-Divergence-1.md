@@ -212,7 +212,7 @@ $$
 
 # 小結
 
-以上，應該對 Entropy 和 Cross Entropy 有比較有條理的理解了，KL Divergence 留到下次再寫，KL Divergence 是 Generative model 中用非常多的一個指標，其概念也是從 Entropy 延伸出去的，欲了解 Generative model 必須先理解 KL Divergence，KL Divergence 和 Cross Entropy 類似，都可以評估兩個分佈的差異程度，但在一些特殊情況下 KL Divergence 可以更好的評估兩分佈實際上的差異。
+以上，應該對 Entropy 和 Cross Entropy 有比較有條理的理解了，KL Divergence 留到下次再寫，KL Divergence 是 Generative model 中用非常多的一個指標，其概念也是從 Entropy 延伸出去的，欲了解 Generative model 必須先理解 KL Divergence，KL Divergence 和 Cross Entropy 類似，都可以評估兩個分佈的差異程度，實際應用上這兩者也經常是等價的，下一篇將詳細解說。
 
 # References
 * [Demystifying Entropy - Naoki Shibuya](https://towardsdatascience.com/demystifying-entropy-f2c3221e2550)
