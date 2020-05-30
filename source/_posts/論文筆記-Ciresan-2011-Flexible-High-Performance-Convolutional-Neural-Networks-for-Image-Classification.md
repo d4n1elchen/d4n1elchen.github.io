@@ -4,7 +4,7 @@ title: >-
   for Image Classification
 date: 2018-12-06 13:39:54
 tags: [statistics,math,machine learning,data analysis,deep learning,neural network]
-categories: Machine Learning
+categories: machine learning
 thumbnail: https://i.imgur.com/IYz0baq.png
 mathjax: true
 ---

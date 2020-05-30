@@ -1,8 +1,8 @@
 ---
 title: 'Re: 從零開始的網頁設計之路'
-tags: [CSS,Web,hahow,Frontend,動畫互動網頁程式入門]
+tags: [CSS,Web,Hahow,frontend]
 id: 3
-categories: Web
+categories: web
 date: 2016-09-09 00:59:41
 ---
 

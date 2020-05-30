@@ -1,8 +1,8 @@
 ---
 title: Material Design & Design Language
 date: 2017-10-03 16:23:22
-tags: [UI,UX,Material Design,Design Language,Logo]
-categories: Design
+tags: [UI, UX, Material Design, design language, logo]
+categories: design
 thumbnail: https://storage.googleapis.com/material-design/publish/material_v_12/assets/0Bx4BSt6jniD7VG9DQVluOFJ4Tnc/materialdesign-principles-metaphor.png
 ---
 

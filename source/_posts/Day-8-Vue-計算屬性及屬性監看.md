@@ -2,7 +2,7 @@
 title: Day 8 Vue 計算屬性及屬性監看
 date: 2019-03-06 01:29:20
 tags: [web, frontend, vue.js]
-categories: Web
+categories: web
 ---
 
 [原文章](https://ithelp.ithome.com.tw/articles/10185324)

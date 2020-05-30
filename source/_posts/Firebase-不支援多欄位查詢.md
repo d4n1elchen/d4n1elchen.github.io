@@ -2,7 +2,7 @@
 title: Firebase 不支援多欄位查詢
 date: 2017-12-25 19:50:02
 tags: [firebase, web, backend, IoT]
-categories: Web
+categories: web
 ---
 
 這兩天本來打算重新設計一下之前寫的感測資料監控的專案，這個專案簡單來說是蒐集感測器的資料並上傳到資料庫，並在網頁上進行視覺化。

@@ -1,8 +1,8 @@
 ---
 title: 又見課程爬蟲 (2) - JavaScript Promise & Generator
-tags: [Web,Node,Backend,NCKU]
+tags: [web,Node,backend,NCKU]
 id: 716
-categories: Web
+categories: web
 date: 2017-01-21 19:55:10
 ---
 

@@ -1,8 +1,8 @@
 ---
 title: '[文章分享] 卷積神經網路 (Convolutional Neural Nets) 及物件偵測 (Object Detection) 方法演化史'
 date: 2020-05-26 21:19:53
-tags: [Object Detection, Neural Networks, Machine Learning]
-categories: Machine Learning
+tags: [object detection, neural networks, machine learning]
+categories: machine learning
 ---
 
 分享 18 年的兩篇文章，有關 ConvNet 以及基於 ConvNets 的物件偵測方法的演化史，適合對 CNN 有一定程度了解的人作為深入學習 CNN 結構改進的方法與背後的數學思考的入門，以及有 CNN 基礎者的物件偵測方法入門，或是對這兩個領域都很熟悉，可以作為複習或參考筆記使用。

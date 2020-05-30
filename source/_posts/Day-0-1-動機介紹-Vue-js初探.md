@@ -2,7 +2,7 @@
 title: Day 0-1 動機介紹&Vue.js初探
 date: 2019-03-05 01:20:58
 tags: [web, frontend, vue.js]
-categories: Web
+categories: web
 ---
 
 # 還債

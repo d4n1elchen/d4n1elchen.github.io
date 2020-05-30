@@ -1,9 +1,9 @@
 ---
 title: RaceOn Note - Simulation
 tags:
-  - Robotics
+  - robotics
   - RaceOn
-categories: Robotics
+categories: robotics
 date: 2020-03-10 00:11:52
 ---
 

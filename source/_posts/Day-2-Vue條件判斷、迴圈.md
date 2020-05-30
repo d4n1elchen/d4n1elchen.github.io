@@ -2,7 +2,7 @@
 title: Day 2 Vue條件判斷、迴圈
 date: 2019-03-05 01:30:17
 tags: [web, frontend, vue.js]
-categories: Web
+categories: web
 ---
 
 [原文章](https://ithelp.ithome.com.tw/articles/10184749)

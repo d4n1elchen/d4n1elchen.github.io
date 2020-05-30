@@ -1,8 +1,8 @@
 ---
 title: ICPC note (5) - string I/O
-tags: [ICPC, Algorithm, Programming Contest]
+tags: [ICPC, algorithm, programming contest, c++]
 id: 1125
-categories: Algorithm
+categories: c++
 date: 2017-02-18 15:44:42
 ---
 

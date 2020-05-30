@@ -2,7 +2,7 @@
 title: 論文筆記 - LeCun 1998 - Gradient-Based Learning Applied to Document Recognition
 date: 2018-07-29 22:59:08
 tags: [statistics,math,machine learning,data analysis,deep learning,neural network]
-categories: Machine Learning
+categories: machine learning
 thumbnail: https://i.imgur.com/5YcH2WU.png
 mathjax: true
 ---

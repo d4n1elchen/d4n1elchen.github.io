@@ -1,8 +1,8 @@
 ---
 title: Multiple machine setup for ROS melodic
 date: 2020-01-16 01:46:41
-tags: [Robotics, Docker]
-categories: Robotics
+tags: [robotics, docker, ROS]
+categories: robotics
 ---
 
 The setup steps for multi-machine configuration (master node on laptop + raspberry pi node) will be included in this tutorial.

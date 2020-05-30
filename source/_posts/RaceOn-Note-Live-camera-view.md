@@ -1,9 +1,9 @@
 ---
 title: RaceOn Note - Live camera view
 tags:
-  - Robotics
+  - robotics
   - RaceOn
-categories: Robotics
+categories: robotics
 date: 2020-03-09 02:26:21
 ---
 

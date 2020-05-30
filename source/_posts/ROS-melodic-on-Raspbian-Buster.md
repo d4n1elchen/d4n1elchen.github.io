@@ -1,8 +1,8 @@
 ---
 title: ROS melodic on Raspbian Buster
 date: 2020-01-14 22:49:21
-tags: [Robotics, Docker]
-categories: Robotics
+tags: [robotics, docker]
+categories: robotics
 ---
 
 This tutorial is to install ROS melodic on latest (Mon 2020) version of Raspbian.

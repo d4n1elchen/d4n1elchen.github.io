@@ -1,8 +1,8 @@
 ---
 title: ICPC note (7) - stringstream
-tags: [ICPC, Algorithm, Programming Contest]
+tags: [ICPC, algorithm, programming contest, c++]
 id: 1137
-categories: Algorithm
+categories: c++
 date: 2017-02-18 15:59:25
 ---
 

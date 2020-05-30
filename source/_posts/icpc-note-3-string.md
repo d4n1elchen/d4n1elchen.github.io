@@ -1,8 +1,8 @@
 ---
 title: ICPC note (3) - string 建構子
-tags: [ICPC, Algorithm, Programming Contest]
+tags: [ICPC, algorithm, programming contest, c++]
 id: 1099
-categories: Algorithm
+categories: c++
 date: 2017-02-18 14:21:47
 ---
 

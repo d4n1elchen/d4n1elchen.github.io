@@ -1,8 +1,8 @@
 ---
 title: 又見課程爬蟲 (3) - 還是用python吧。
-tags: [Web,NCKU Course Query,python,Backend,NCKU]
+tags: [web,NCKU Course Query,python,backend,NCKU]
 id: 824
-categories: Web
+categories: web
 date: 2017-01-21 20:28:06
 ---
 

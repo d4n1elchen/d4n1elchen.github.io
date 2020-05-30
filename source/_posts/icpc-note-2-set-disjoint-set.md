@@ -1,8 +1,8 @@
 ---
 title: ICPC note (2) - set & disjoint set
-tags: [ICPC, Algorithm, Programming Contest]
+tags: [ICPC, algorithm, programming contest, c++]
 id: 1049
-categories: Algorithm
+categories: algorithm
 date: 2017-02-18 14:05:59
 ---
 

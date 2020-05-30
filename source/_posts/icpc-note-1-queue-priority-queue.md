@@ -1,8 +1,8 @@
 ---
 title: ICPC note (1) queue & priority queue
-tags: [ICPC, Algorithm, Programming Contest]
+tags: [ICPC, algorithm, programming contest, c++]
 id: 1022
-categories: Algorithm
+categories: c++
 date: 2017-02-18 13:21:12
 ---
 

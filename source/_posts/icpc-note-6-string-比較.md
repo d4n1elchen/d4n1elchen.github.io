@@ -1,8 +1,8 @@
 ---
 title: ICPC note (6) - string 比較
-tags: [ICPC, Algorithm, Programming Contest]
+tags: [ICPC, algorithm, programming contest, c++]
 id: 1128
-categories: Algorithm
+categories: c++
 date: 2017-02-18 15:45:21
 ---
 

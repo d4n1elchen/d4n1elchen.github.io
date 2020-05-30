@@ -1,8 +1,8 @@
 ---
 title: Z-transform
 date: 2019-02-27 00:36:35
-tags: [Control System,discrete,robotics]
-categories: Control System
+tags: [control system,discrete,robotics]
+categories: control system
 mathjax: true
 ---
 

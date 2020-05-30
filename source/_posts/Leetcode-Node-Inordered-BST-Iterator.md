@@ -1,8 +1,8 @@
 ---
 title: Leetcode Note - Inordered BST Iterator
 date: 2019-09-25 23:40:34
-tags: [ICPC, Algorithm, Programming Contest, Leetcode, BST]
-categories: Algorithm
+tags: [ICPC, algorithm, programming contest, Leetcode]
+categories: algorithm
 ---
 
 [LC 653. Two Sum IV - Input is a BST](https://leetcode.com/problems/two-sum-iv-input-is-a-bst/)

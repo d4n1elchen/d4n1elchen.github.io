@@ -1,8 +1,8 @@
 ---
 title: ICPC note (4) - string 基本操作
-tags: [ICPC, Algorithm, Programming Contest]
+tags: [ICPC, algorithm, programming contest, c++]
 id: 1122
-categories: Algorithm
+categories: c++
 date: 2017-02-18 15:43:29
 ---
 

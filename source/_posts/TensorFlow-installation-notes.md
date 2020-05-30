@@ -1,8 +1,8 @@
 ---
 title: TensorFlow installation notes
 date: 2017-12-19 01:52:45
-tags: [TensorFlow, Machine Learning]
-categories: Machine Learning
+tags: [TensorFlow, machine learning]
+categories: machine learning
 ---
 
 I just wrote some installation notes for install TensorFlow 1.4 on Ubuntu 17.10

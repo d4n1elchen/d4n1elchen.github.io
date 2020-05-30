@@ -1,8 +1,8 @@
 ---
 title: 又見課程爬蟲 (4) – mongo-connector
-tags: [NCKU Course Query,Web,Node,Backend,NCKU]
+tags: [NCKU Course Query,web,Node,backend,NCKU]
 id: 880
-categories: Web
+categories: web
 date: 2017-02-07 22:33:57
 ---
 

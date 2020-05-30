@@ -1,8 +1,8 @@
 ---
 title: TensorFlow 學習筆記 (1) - feature_column
 date: 2018-03-21 16:42:17
-tags: [TensorFlow, Machine Learning]
-categories: Machine Learning
+tags: [TensorFlow, machine learning]
+categories: machine learning
 ---
 
 前言

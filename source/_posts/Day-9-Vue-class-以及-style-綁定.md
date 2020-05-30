@@ -2,7 +2,7 @@
 title: Day 9 Vue class 以及 style 綁定
 date: 2019-03-07 16:09:51
 tags: [web, frontend, vue.js]
-categories: Web
+categories: web
 ---
 
 [原文章](https://ithelp.ithome.com.tw/articles/10211132)

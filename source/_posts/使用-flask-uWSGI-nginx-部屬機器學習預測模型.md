@@ -1,8 +1,8 @@
 ---
 title: 使用 flask + uWSGI + nginx 部屬機器學習預測模型
 date: 2018-12-08 11:31:55
-tags: [Web, Machine Learning]
-categories: Web
+tags: [web, machine learning]
+categories: web
 mathjax: true
 ---
 

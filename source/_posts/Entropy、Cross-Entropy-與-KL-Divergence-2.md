@@ -1,8 +1,8 @@
 ---
 title: Entropy、Cross-Entropy 與 KL-Divergence (2)
 date: 2020-05-20 07:28:12
-tags: [Machine Learning, Math]
-categories: Machine Learning
+tags: [machine learning, math]
+categories: machine learning
 mathjax: true
 ---
 

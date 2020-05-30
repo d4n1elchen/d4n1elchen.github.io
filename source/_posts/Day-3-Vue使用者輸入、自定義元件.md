@@ -2,7 +2,7 @@
 title: Day 3 Vue使用者輸入、自定義元件
 date: 2019-03-05 01:39:39
 tags: [web, frontend, vue.js]
-categories: Web
+categories: web
 ---
 
 [原文章](https://ithelp.ithome.com.tw/articles/10184752)

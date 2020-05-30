@@ -2,7 +2,7 @@
 title: Day 4 Vue物件
 date: 2019-03-05 01:54:34
 tags: [web, frontend, vue.js]
-categories: Web
+categories: web
 ---
 
 [原文章](https://ithelp.ithome.com.tw/articles/10185036)
