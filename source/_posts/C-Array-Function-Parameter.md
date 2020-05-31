@@ -344,8 +344,8 @@ void fn8(int, int, int **arr); // try to change fn8 to fn6, you'll get conflict 
 void fn9(int arr[const 10][10]);
 void fn10(int arr[static 10][10]);
 
-//void fn11(int arr[][const 10]); // error: type qualifier used in non-outermost array type derivation
-//void fn12(int arr[][static 10]); // error: 'static' used in non-outermost array type derivation
+void fn11(int arr[][const 10]); // error: type qualifier used in non-outermost array type derivation
+void fn12(int arr[][static 10]); // error: 'static' used in non-outermost array type derivation
 ```
 
 ## C++
