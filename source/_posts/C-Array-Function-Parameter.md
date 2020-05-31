@@ -211,13 +211,8 @@ fn(b); // still working, printout = 8
 
 所以其實在 parameter list 中的 size 是沒有作用的，也可以直接省略不寫，或直接宣告成 pointer
 ```c
-void fn2(int a[]) {
-    printf("%lu\n", sizeof a);
-}
-
-void fn3(int *a) {
-    printf("%lu\n", sizeof a);
-}
+void fn(int a[]);
+void fn(int *a);
 ```
 
 以上宣告方式都是等價的
@@ -246,8 +241,8 @@ type qualifier 就是指 `const` `restrict` `volatile` 這三個關鍵字，代�
 #### Type Qualifier
 type qualifier 會作用在轉換過後的 pointer，例如以下兩個宣告是等價的
 ```c
-void fn(int a[const]);
-void fn(int *const a);
+void fn1(int a[const]);
+void fn1(int *const a);
 ```
 
 > 註：`int const *a` 和 `int *const a` 是不一樣的，前者為該 pointer 指向的空間為 const，後者表示該 pointer 所在的記憶體空間為 const，可以將前者讀做 "pointer to const" 後者讀做 "const pointer" 方便記憶。
@@ -255,55 +250,71 @@ void fn(int *const a);
 #### `[static N]`
 static 關鍵字後面一定要接一個數字，表示傳入的 array 至少要大於這個大小，這是由編譯器進行檢查的，如果傳入小於該大小的 array (包含 null) 會有 warning (而非 error)
 ```c
-void fn(int arr[static 4]);
+void fn2(int arr[static 4]);
 
 int a[3] = { 1, 2, 3 };
 int b[4] = { 1, 2, 3, 4 };
-fn(b); // working without warning or error
-fn(a); // warning: array argument is too small; contains 3 elements, callee requires at least 4 [-Warray-bounds]
-fn(NULL); // warning: null passed to a callee that requires a non-null argument [-Wnonnull]
+fn2(b); // working without warning or error
+fn2(a); // warning: array argument is too small; contains 3 elements, callee requires at least 4 [-Warray-bounds]
+fn2(NULL); // warning: null passed to a callee that requires a non-null argument [-Wnonnull]
 ```
 
 #### `[*]`
 這是給 VLA 用的，如果你的 array 是個 VLA 的話，可以在 function prototype 用 `[*]` 宣告，如果你不知道 VLA 用哪個變數宣告大小
 ```c
-void fn(int, int [*]);
-void fn(int n, int arr[n]);
+void fn3(int, int [*]);
+void fn3(int n, int arr[n]);
 ```
 
 到這你可能會想個問題，既然 array 會被 decay 成 pointer，那 VLA 有什麼意義?
 
 沒錯，上述例子等價
 ```c
-void fn(int n, int arr[]);
-void fn(int n, int *arr);
+void fn3(int n, int arr[]);
+void fn3(int n, int *arr);
 ```
 
 因此這裡使用 VLA 是沒有意義的，但如果宣告的是一個二維的 array type 的話，就有差別了，在那之前先來看看二維陣列會有什麼樣的行為
 
 ### 2D Array
 
-宣告一個二維陣列
+宣告一個二維陣列，宣告方式和一維的類似
 ```c
-int arr[10][10];
+int b2[4][4];
 ```
 
 首先並不存在「二維陣列」這種型別，上面這樣的宣告應該解讀為「以 "長度為 10 的 int 陣列"  element type，長度是 10 的陣列」所以他還是一個 array type，只是他的 element type 也是個 array type。
+
+還得前面有提到 element type 不能是 incomplete 嗎? `int []` 做為 incomplete type 不能出現在 element type 中，因此 `int [][]` 是不合法的。因為這個規定，兩層的 incomplete type + initializer 是行不通的，但只有第一層是 incomplete type 是沒問題的。
+
+```c
+int a2[][] = {
+    {1, 2, 3},
+    {4, 5, 6},
+    {7, 8, 9}
+}; // error: array has incomplete element type 'int []'
+
+int a2[][3] = {
+    {1, 2, 3},
+    {4, 5, 6},
+    {7, 8, 9}
+}; // working
+```
 
 ### 2D Array as Function Parameter
 
 那麼如果將 2D array 做為參數會發生什麼事情呢
 ```c
-void fn(int arr[10][10]);
+void fn4(int arr[10][10]);
 ```
 
 首先最外層的 array type 會 decay 成指向陣列第一個元素的 pointer，也就是指向第一個 `int [10]` array 的 **pointer**，接下來因為他已經 pointer type 而不是 array type，所以並不會繼續 decay 下去，因此上面與以下宣告等價
 ```c
-void fn(int (*arr)[10]);
+void fn4(int (*arr)[10]);
 ```
 且與以下宣告不等價
 ```c
-void fn(int **arr);
+void fn5(int **arr);  // try to change fn5 to fn4, you'll get conflict definition
 ```
 > 註：`int *arr[N]` 和 `int (*arr)[N]` 不等價，前者等價 `int *(arr[N])`，是 `int *` 的 array，後者是指向 `int [N]` 的 pointer，可以將前者讀做 "pointer to array" 後者讀做 "array of pointer" 方便記憶。
 
@@ -314,27 +325,27 @@ void fn(int n, int m, int arr[n][m]);
 
 `arr` 會被 decay 成 pointer，指向的是一個長度是 m 的 VLA。其 function prototype 可以這樣宣告
 ```c
-void fn(int, int, int arr[*][*]);
+void fn6(int, int, int arr[*][*]);
 ```
 且與以下宣告等價
 ```c
-void fn(int, int, int arr[][*]);
-void fn(int, int, int (*arr)[*]);
+void fn6(int, int, int arr[][*]);
+void fn6(int, int, int (*arr)[*]);
 ```
 與以下宣告不等價
 ```c
-void fn(int, int, int arr[][]); // illegel
-void fn(int, int, int **arr);
+void fn7(int, int, int arr[][]); // error: array has incomplete element type 'int []'
+void fn8(int, int, int **arr); // try to change fn8 to fn6, you'll get conflict definition
 ```
-其中第一個是不允許的，還記的前面提到的 incomplete type 嗎? `int []` 做為 incomplete type 不能出現在 element type 中，因此 `int [][]` 是不合法的 (除了帶有 initializer 的 array declaration 之外，帶有 initializer 的陣列宣告其結果為 complete type)。
+其中第一個是不允許的，前面已經解釋過了
 
 除此之外，剛剛提到的 type-specifier 和 static 關鍵字也只能寫在最外層的中括號裡，因為其他的並不會被 cast 成 pointer，在裡面指定 type-specifier 和 static 並沒有意義，可以回去看剛剛提到的 (6.7.5.2.1) 的後半句。
 ```c
-void fn(int arr[const 10][10]);
-void fn(int arr[static 10][10]);
+void fn9(int arr[const 10][10]);
+void fn10(int arr[static 10][10]);
 
-void fn(int arr[][const 10]); // error: type qualifier used in non-outermost array type derivation
-void fn(int arr[][static 10]); // error: 'static' used in non-outermost array type derivation
+//void fn11(int arr[][const 10]); // error: type qualifier used in non-outermost array type derivation
+//void fn12(int arr[][static 10]); // error: 'static' used in non-outermost array type derivation
 ```
 
 ## C++
@@ -348,7 +359,7 @@ void fn(int (&arr)[10]) {
 ## 小結
 因為 array parameter 的 array to pointer decay 的特性，你無法使用常見的 [用 sizeof 去計算 array 的長度](https://stackoverflow.com/questions/37538/how-do-i-determine-the-size-of-my-array-in-c) 的方法來得到 array 長度
 ```c
-void fn(int arr[10]) {
+void fn13(int arr[10]) {
     int size = sizeof(arr) / sizeof(arr[0]);
     printf("%lu\n", size); // get 2 instead of 10
 }
@@ -356,13 +367,13 @@ void fn(int arr[10]) {
 
 如果你想這麼做的話你必須讓 callee 去做這件事情並把 size 作為參數傳入
 ```c
-void fn(int size, int arr[]) {
+void fn14(int size, int arr[]) {
     printf("%lu\n", size); // get 10
 }
 
 int arr[10];
 int size = sizeof(arr) / sizeof(arr[0]);
-fn(size, arr);
+fn14(size, arr);
 ```
 
 或是利用 C++ 的 pass by reference
@@ -376,6 +387,10 @@ void fn(int (&arr)[10]) {
 就是這個問題困擾了我許久，不知道該怎麼在 function 裡面得到長度的資訊，此外讓二維陣列做為參數傳入的方法也是不太好理解的東西。
 
 以上！
+
+## Code
+所有測試程式碼都在這裡面，可以直接執行執行，並嘗試把會錯誤的幾行註解拿掉編譯看看
+https://repl.it/join/wzkmjaqm-d4n1el
 
 ## References
 * [ISO/IEC 9899:1999 - N1256 (C99)](http://www.open-std.org/jtc1/sc22/wg14/www/docs/n1256.pdf)
