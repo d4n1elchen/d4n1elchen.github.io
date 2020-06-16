@@ -1,5 +1,5 @@
 ---
-title: Leetcode Note - Inordered BST Iterator
+title: LeetCode Note - Inordered BST Iterator
 date: 2019-09-25 23:40:34
 tags: [ICPC, algorithm, programming contest, Leetcode]
 categories: algorithm
