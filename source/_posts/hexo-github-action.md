@@ -5,7 +5,7 @@ tags: [Hexo, web, GitHub, CI/CD]
 categories: web
 ---
 
-GitHub 在去年 11/8 的時候發布了自家的 CI/CD 工具 GitHub Action 並提供 public repo 無限額度的免費使用，在過去雖然有整合 Travis CI 但設定起來還是有點麻煩，GitHub Action 強大的地方在於他的 Market place 功能，可以像安裝套件一樣直接使用別人寫好的 CI/CD Script。
+GitHub 在去年 11 月的時候發布了自家的 CI/CD 工具 GitHub Action 並提供 public repo 無限額度的免費使用，在過去雖然有整合 Travis CI 但設定起來還是有點麻煩，GitHub Action 強大的地方在於他的 Market place 功能，可以像安裝套件一樣直接使用別人寫好的 CI/CD Script。
 
 以往在發部落格文章的時候都要自己手動下指令 `hexo g -d`，雖然已經夠簡便了，但人的懶惰是沒有極限的，因此這次就來嘗試使用看看這個 GitHub 的新功能來做自動部屬，在設定 Action 之前記得先將你的 hexo 的 git deploy 設定好，以下都假設你已經設定好 (就是你有辦法使用上面那個指令直接部屬你的 hexo blog)，且你知道你的 hexo 文章原始碼和靜態網站各放在哪個 repo 的 branch。
 
@@ -61,7 +61,7 @@ ssh-keygen -t rsa -b 4096 -C "$(git config user.email)" -f hexo -N ""
 
 因為我原始碼和網站在同一個 repository，所以我兩個設定都在同一個 repo 裡，如果兩個是分開的人小心不要搞錯。
 
-完成後把該設定檔 push 上去就可以了，當你設定 `on: push:` 的 branch 有 push event 發生時就會觸發自動部屬，可以到 GitHub repo 裡面的 Action tab 查看是否有部屬成功。
+完成後把該設定檔 push 上去就可以了，當你 `on: push:` 設定的 branch 有 push event 發生時就會觸發自動部屬，可以到 GitHub repo 裡面的 Action tab 查看是否有部屬成功。
 
 ![](https://imgur.com/nrNObjb.png)
 
@@ -79,7 +79,7 @@ ssh-keygen -t rsa -b 4096 -C "$(git config user.email)" -f hexo -N ""
 | cloudflare_zone      | string  |          |          | the cloudflare zone                                                     |
 | cloudflare_token     | secrets |          |          | Your cloudflare token                                                   |
 
-比較值得注意的是 `branch`，如果你放的靜態網站的 branch 不是 `master` (例如 `gh-page`)，可以透過這個參數設定。
+比較值得注意的是 `branch`，如果你放靜態網站的 branch 不是 `master` (例如 `gh-pages`)，可以透過這個參數設定。
 
 如果有需要 Clouldflare flush 的人可以設定最後那三個參數，你需要知道你的 zone id 跟 cloudflare token，token 記得要使用 secrets 來設定，設定方法和上面設定 ssh key 設定 private key 的部份一樣。
 
