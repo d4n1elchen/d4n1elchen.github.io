@@ -81,7 +81,7 @@ ssh-keygen -t rsa -b 4096 -C "$(git config user.email)" -f hexo -N ""
 
 比較值得注意的是 `branch`，如果你放靜態網站的 branch 不是 `master` (例如 `gh-pages`)，可以透過這個參數設定。
 
-如果有需要 Clouldflare flush 的人可以設定最後那三個參數，你需要知道你的 zone id 跟 cloudflare token，token 記得要使用 secrets 來設定，設定方法和上面設定 ssh key 設定 private key 的部份一樣。
+如果有需要 flush Clouldflare cache 的人可以設定最後那三個參數，你需要知道你的 zone id 跟 cloudflare token，token 記得要使用 secrets 來設定，設定方法和上面設定 ssh key 設定 private key 的部份一樣。
 
 ### 小問題
 這個 action 有個小問題就是你的靜態網站的 repo 的 commit history 會被洗掉，`hexo deploy` 會把產生的靜態檔案複製到 repo 目錄底下的 `.deploy_git` 並 commit，預設這個資料夾是不會被 stage 的，解決方法是把這個資料夾從 `.gitignore` 裡面拿掉，或者是修改 action 的 script，讓他每次 deploy 前先把靜態網站的 repo clone 至 `.deploy_git` 資料夾內，後面這個方案可以參考[這篇文章](https://depp.wang/2020/02/17/use-github-actions-to-achieve-hexo-blog-auto-deploy/)。
