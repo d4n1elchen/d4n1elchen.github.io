@@ -20,5 +20,5 @@ jobs:
       - uses: yrpang/github-actions-hexo@master
         with:
           deploykey: ${{secrets.DEPLOY_KEY}}
-          username: YOUR_USER_NAME
-          email: YOUR_EMAIL_ADDRESS
+          username: d4n1elchen
+          email: team6612@gmail.com
