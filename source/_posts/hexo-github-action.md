@@ -61,7 +61,7 @@ ssh-keygen -t rsa -b 4096 -C "$(git config user.email)" -f hexo -N ""
 
 因為我原始碼和網站在同一個 repository，所以我兩個設定都在同一個 repo 裡，如果兩個是分開的人小心不要搞錯。
 
-完成後把該設定檔 push 上去就可以了，當你 `on: push:` 設定的 branch 有 push event 發生時就會觸發自動部屬，可以到 GitHub repo 裡面的 Action tab 查看是否有部屬成功。
+完成後把該設定檔 push 上去就可以了，當你 `on: push:` 設定的 branch 有 push event 發生時就會觸發自動部屬，可以到 GitHub repo 裡面的 `Actions` tab 查看是否有部屬成功。
 
 ![](https://imgur.com/nrNObjb.png)
 
