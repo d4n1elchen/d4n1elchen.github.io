@@ -283,9 +283,9 @@ void fn3(int n, int *arr);
 int b2[4][4];
 ```
 
-首先並不存在「二維陣列」這種型別，上面這樣的宣告應該解讀為「以 "長度為 10 的 int 陣列"  element type，長度是 10 的陣列」所以他還是一個 array type，只是他的 element type 也是個 array type。
+首先並不存在「二維陣列」這種型別，上面這樣的宣告應該解讀為「以 "長度為 4 的 int 陣列"  element type，長度是 4 的陣列」所以他還是一個 array type，只是他的 element type 也是個 array type。
 
-還得前面有提到 element type 不能是 incomplete 嗎? `int []` 做為 incomplete type 不能出現在 element type 中，因此 `int [][]` 是不合法的。因為這個規定，兩層的 incomplete type + initializer 是行不通的，但只有第一層是 incomplete type 是沒問題的。
+還記得前面有提到 element type 不能是 incomplete 嗎? `int []` 做為 incomplete type 不能出現在 element type 中，因此 `int [][]` 是不合法的。因為這個規定，兩層的 incomplete type + initializer 是行不通的，但只有第一層是 incomplete type 是沒問題的。
 
 ```c
 int a2[][] = {
@@ -308,7 +308,7 @@ int a2[][3] = {
 void fn4(int arr[10][10]);
 ```
 
-首先最外層的 array type 會 decay 成指向陣列第一個元素的 pointer，也就是指向第一個 `int [10]` array 的 **pointer**，接下來因為他已經 pointer type 而不是 array type，所以並不會繼續 decay 下去，因此上面與以下宣告等價
+首先最外層的 array type 會 decay 成指向陣列第一個元素的 pointer，也就是指向第一個 `int [10]` array 的 **pointer**，接下來因為他已經是 pointer type 而不是 array type，所以並不會繼續 decay 下去，因此上面與以下宣告等價
 ```c
 void fn4(int (*arr)[10]);
 ```
@@ -316,7 +316,7 @@ void fn4(int (*arr)[10]);
 ```c
 void fn5(int **arr);  // try to change fn5 to fn4, you'll get conflict definition
 ```
-> 註：`int *arr[N]` 和 `int (*arr)[N]` 不等價，前者等價 `int *(arr[N])`，是 `int *` 的 array，後者是指向 `int [N]` 的 pointer，可以將前者讀做 "pointer to array" 後者讀做 "array of pointer" 方便記憶。
+> 註：`int *arr[N]` 和 `int (*arr)[N]` 不等價，前者等價 `int *(arr[N])`，是 `int *` 的 array，後者是指向 `int [N]` 的 pointer，可以將前者讀做 "array of pointers" 後者讀做 "pointer to an array" 方便記憶。
 
 回到 VLA，考慮以下例子
 ```c
