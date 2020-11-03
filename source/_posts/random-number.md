@@ -127,8 +127,8 @@ Serial correlation coefficient is 0.000057 (totally uncorrelated = 0.0).
 
 輸出的第三部分為卡方檢定的結果，卡方中的適合度檢定(Goodness of Fit)可用來檢定資料是否符合某種分佈，我們可以用卡方來檢驗我們的資料是否符合 Uniform distrubution，卡方檢定的 null hypothesis 如下
 
-$H_0: p_i=p_{i0}, i=1,...,k$
-$H_1: 不是所有p_i都等於p_{i0}$
+$H\_0: p\_i=p\_{i0}, i=1,...,k$
+$H\_1: 不是所有p\_i都等於p\_{i0}$
 
 經由卡方檢定計算出的 p 值若小於設定的信心水準 (如0.05) 表示拒絕此虛無假說，則可宣稱此組資料不符合指定分佈，反之則宣稱無證據顯示此資料不符合該分佈。
 
