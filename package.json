@@ -27,6 +27,6 @@
     "hexo-tag-youtube-responsive": "^0.4.2",
     "moment-timezone": "^0.5.37",
     "prismjs": "^1.27.0",
-    "qs": "^6.5.3"
+    "qs": "^6.16.0"
   }
 }
