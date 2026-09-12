@@ -1,8 +1,9 @@
 name: Hexo Build and Deploy
 
-on: 
+on:
   push:
     branches: [source]
+  workflow_dispatch:
 
 jobs:
   build:
@@ -12,13 +13,30 @@ jobs:
         uses: actions/checkout@v3
         with:
           ref: source
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
       - name: Cache node modules
         uses: actions/cache@v3
         with:
           path: node_modules
           key: ${{runner.OS}}-${{hashFiles('**/package-lock.json')}}
-      - uses: yrpang/github-actions-hexo@master
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build
+        run: npx hexo generate
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
         with:
-          deploykey: ${{secrets.DEPLOY_KEY}}
-          username: d4n1elchen
-          email: team6612@gmail.com
+          deploy_key: ${{secrets.DEPLOY_KEY}}
+          publish_branch: master
+          publish_dir: ./public
+          user_name: d4n1elchen
+          user_email: team6612@gmail.com
